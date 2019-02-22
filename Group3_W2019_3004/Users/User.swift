@@ -9,98 +9,62 @@
 import Foundation
 
 class User{
-
+    
     var userID:String?
     var password:String?
- 
-    init()
-        
+    var loginStatus = LoginStatus.InValid
+    
+    //Enum for login status Valid, Invalid User
+    enum LoginStatus : Int
     {
-        
-        self.userID = String()
-        
-        self.password = String()
-        
+        case Valid, InValid
     }
     
-    init?(userID: String, password: String)
-        
+    init()
     {
-        
+        self.userID = String()
+        self.password = String()
+    }
+    init?(userID: String, password: String)
+    {
         self.userID = userID
-        
         self.password = password
         
-        
-        
         if (userID.isEmpty || password.isEmpty)
-            
         {
-            
-            if(!password.isValidPassword())
-                
+            if(password.isValidPassword())
             {
-                
                 print("Invalid Password format")
-                
                 return nil
-                
             }
             
-            
-            
         }else{
-            
             print("User ID or Password cannot be empty ")
-            
             return nil
-            
         }
-        
-        
         
     }
     
-    
-    
-   
-    
+    func verify() {
+        loginStatus = LoginStatus.Valid
+    }
     
     func verifyLogin()-> Bool
-        
     {
-        
-        if(true)
-            
+        if(self.loginStatus == LoginStatus.InValid)
         {
-            
             return false
-            
         }
-            
         else{
             
-            
-            
             return true
-            
         }
-        
     }
-    
-    
     
     func display()
-        
     {
-        
-        print(self.userID!,self.password!)
-        
+        print(self.userID!,self.password!,self.loginStatus)
     }
-    
-    
-    
     
     
 }
-
