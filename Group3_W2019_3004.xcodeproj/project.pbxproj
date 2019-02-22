@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		990537E52220B75D002E12A1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537E42220B75D002E12A1 /* main.swift */; };
+		990537F52220BF4E002E12A1 /* Administrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537F42220BF4E002E12A1 /* Administrator.swift */; };
+		990537F72220BF5C002E12A1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537F62220BF5C002E12A1 /* User.swift */; };
+		990537F92220BF66002E12A1 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537F82220BF66002E12A1 /* Customer.swift */; };
+		990537FB2220BF78002E12A1 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537FA2220BF78002E12A1 /* Orders.swift */; };
+		990537FD2220BF8D002E12A1 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537FC2220BF8D002E12A1 /* OrderDetails.swift */; };
+		990537FF2220BF9B002E12A1 /* ShippingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537FE2220BF9B002E12A1 /* ShippingInfo.swift */; };
+		990538012220BFF9002E12A1 /* ExtensionOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990538002220BFF9002E12A1 /* ExtensionOrders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,13 @@
 /* Begin PBXFileReference section */
 		990537E12220B75D002E12A1 /* Group3_W2019_3004 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Group3_W2019_3004; sourceTree = BUILT_PRODUCTS_DIR; };
 		990537E42220B75D002E12A1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		990537F42220BF4E002E12A1 /* Administrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Administrator.swift; sourceTree = "<group>"; };
+		990537F62220BF5C002E12A1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		990537F82220BF66002E12A1 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		990537FA2220BF78002E12A1 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		990537FC2220BF8D002E12A1 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
+		990537FE2220BF9B002E12A1 /* ShippingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingInfo.swift; sourceTree = "<group>"; };
+		990538002220BFF9002E12A1 /* ExtensionOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionOrders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +83,9 @@
 		990537EF2220B8EC002E12A1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				990537F42220BF4E002E12A1 /* Administrator.swift */,
+				990537F62220BF5C002E12A1 /* User.swift */,
+				990537F82220BF66002E12A1 /* Customer.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -76,6 +93,8 @@
 		990537F12220B922002E12A1 /* Orders */ = {
 			isa = PBXGroup;
 			children = (
+				990537FA2220BF78002E12A1 /* Orders.swift */,
+				990537FC2220BF8D002E12A1 /* OrderDetails.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -83,6 +102,7 @@
 		990537F22220B935002E12A1 /* Shipping */ = {
 			isa = PBXGroup;
 			children = (
+				990537FE2220BF9B002E12A1 /* ShippingInfo.swift */,
 			);
 			path = Shipping;
 			sourceTree = "<group>";
@@ -90,6 +110,7 @@
 		990537F32220B942002E12A1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				990538002220BFF9002E12A1 /* ExtensionOrders.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -152,6 +173,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				990537E52220B75D002E12A1 /* main.swift in Sources */,
+				990537FF2220BF9B002E12A1 /* ShippingInfo.swift in Sources */,
+				990537FD2220BF8D002E12A1 /* OrderDetails.swift in Sources */,
+				990537F52220BF4E002E12A1 /* Administrator.swift in Sources */,
+				990538012220BFF9002E12A1 /* ExtensionOrders.swift in Sources */,
+				990537F72220BF5C002E12A1 /* User.swift in Sources */,
+				990537F92220BF66002E12A1 /* Customer.swift in Sources */,
+				990537FB2220BF78002E12A1 /* Orders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
