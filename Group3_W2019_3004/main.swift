@@ -20,3 +20,11 @@ if let u = user1
     print("User Object Created")
     u.display()
  }
+var admin1: Administrator?
+admin1 = Administrator(userID: "1", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
+if let a = admin1    
+{
+print("User Object Created")
+    a.display()
+    
+}
