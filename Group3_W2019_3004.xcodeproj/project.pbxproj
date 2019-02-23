@@ -16,6 +16,7 @@
 		990537FF2220BF9B002E12A1 /* ShippingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990537FE2220BF9B002E12A1 /* ShippingInfo.swift */; };
 		990538012220BFF9002E12A1 /* ExtensionOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990538002220BFF9002E12A1 /* ExtensionOrders.swift */; };
 		990538032220CB34002E12A1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990538022220CB34002E12A1 /* Product.swift */; };
+		990538052220CEC8002E12A1 /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990538042220CEC8002E12A1 /* ShoppingCart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		990537FE2220BF9B002E12A1 /* ShippingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingInfo.swift; sourceTree = "<group>"; };
 		990538002220BFF9002E12A1 /* ExtensionOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionOrders.swift; sourceTree = "<group>"; };
 		990538022220CB34002E12A1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		990538042220CEC8002E12A1 /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				990537FA2220BF78002E12A1 /* Orders.swift */,
 				990537FC2220BF8D002E12A1 /* OrderDetails.swift */,
 				990538022220CB34002E12A1 /* Product.swift */,
+				990538042220CEC8002E12A1 /* ShoppingCart.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				990538032220CB34002E12A1 /* Product.swift in Sources */,
 				990537FD2220BF8D002E12A1 /* OrderDetails.swift in Sources */,
 				990537F52220BF4E002E12A1 /* Administrator.swift in Sources */,
+				990538052220CEC8002E12A1 /* ShoppingCart.swift in Sources */,
 				990538012220BFF9002E12A1 /* ExtensionOrders.swift in Sources */,
 				990537F72220BF5C002E12A1 /* User.swift in Sources */,
 				990537F92220BF66002E12A1 /* Customer.swift in Sources */,
