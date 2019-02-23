@@ -28,3 +28,11 @@ print("User Object Created")
     a.display()
     
 }
+var customer1 : Customer?
+customer1=Customer(userID: "1", password: "Password123", customerName: "Nayay", address: "681 hsr", email: "snayay@gmail.com", shoppingInfo: "Active Shopper")
+customer1?.verify()
+if let c = customer1
+{
+    print("Customer Object Created")
+    c.display()
+}
