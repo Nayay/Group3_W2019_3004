@@ -28,23 +28,17 @@ class OrderDetails
     }
     
     init()
-        
     {
         self.orderID = 0
-        
-    }
+    }    
     
     init(orderID:Int,arrayProducts:[Product]) {
-        
         self.orderID = orderID
-        
         self.arrayProducts = arrayProducts
         }
     
     func display() {
-        
         print(self.orderID!,self.subTotal)
-        
     }
     func calcPrice(){
         
