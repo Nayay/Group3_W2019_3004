@@ -13,23 +13,22 @@ class ShoppingCart
    var arrayProducts:[Product] = [Product]()
  //   var productID:Int?
 //    var quantity:Int?
-    var dateAdded:String?
+    var dateAdded:Date = Date()
     
-    init()
-    {
-        self.cartID = 0
-        self.dateAdded = String()
-        
-    }
+
     
-    init?(cartID: Int, dateAdded:String, arrayProducts:[Product])
+    init?(cartID: Int, dateAdded:Date, arrayProducts:[Product])
     {
         self.cartID = cartID
         self.dateAdded = dateAdded
         self.arrayProducts = arrayProducts
     }
     func display() {
-        print(self.cartID!,self.dateAdded!)
+        print("****************************************************************")
+        print("Cart Id: \(self.cartID!) Date Added: \(self.dateAdded.getForamttedDate())")
+        for product in self.arrayProducts {
+            product.display()
+        }
     }
     
     func addCartItem(){

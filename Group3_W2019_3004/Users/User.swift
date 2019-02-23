@@ -30,9 +30,9 @@ class User{
         self.userID = userID
         self.password = password
         
-        if (userID.isEmpty || password.isEmpty)
+        if (!userID.isEmpty || !password.isEmpty)
         {
-            if(password.isValidPassword())
+            if(!password.isValidPassword())
             {
                 print("Invalid Password format")
                 return nil

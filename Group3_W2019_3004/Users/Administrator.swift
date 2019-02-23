@@ -24,14 +24,14 @@ class Administrator:User
         super.init(userID: userID, password: password)
         self.adminName = adminName
         self.email = email
-        if email.isValidEmail()
+        if !email.isValidEmail()
             {
-            print("Invalid Student Email ID")
+            print("Invalid Admin Email ID")
             return nil
             }
-        if adminName.count < 10
+        if adminName.count < 4
             {
-            print("Customer Name must be greater 10 digits")
+            print("Admin Name must be greater 4 digits")
             return nil
             }
         }

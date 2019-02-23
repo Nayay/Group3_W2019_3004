@@ -30,7 +30,7 @@ class Customer:User
         self.address = address
         self.email = email
         self.shoppingInfo = shoppingInfo
-        if customerName.count < 10
+        if customerName.count < 4
         {
             print("Customer Name must be greater 10 digits")
             return nil
@@ -41,12 +41,12 @@ class Customer:User
             print("Customer Email ID must be greater 6 digits")
            return nil
         }
-        if email.isValidEmail()
+        if !email.isValidEmail()
         {
             print("Invalid Student Email ID")
             return nil
         }
-         if password.isValidPassword()
+         if !password.isValidPassword()
         {
              print("Invalid Password format")
             return nil

@@ -8,7 +8,6 @@
 
 import Foundation
 
-print("Hello, World!")
 
 //anayay
 var user1: User?
@@ -24,7 +23,7 @@ var admin1: Administrator?
 admin1 = Administrator(userID: "1", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
 if let a = admin1    
 {
-print("User Object Created")
+print("Admin Object Created")
     a.display()
     
 }
@@ -47,6 +46,6 @@ var p5:Product = Product.init(productId: 500, productName: "iPhone 7 Plus", unit
 
 //CREATING ORDER 1
 var shoppingCart: ShoppingCart?
-shoppingCart = ShoppingCart(cartID: 1, dateAdded: "10-06-2010", arrayProducts: [p1,p2,p3])
+shoppingCart = ShoppingCart(cartID: 1, dateAdded: Date(), arrayProducts: [p1,p2,p3])
 
 shoppingCart?.display()
