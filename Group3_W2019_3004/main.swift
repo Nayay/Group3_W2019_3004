@@ -37,15 +37,22 @@ if let c = customer1
 }
 
 //CREATING PRODUCT OBJECTS
-var p1:Product = Product.init(productId: 100, productName: "Hard Drive", unitCost: 120.0, quantity: 1)
-var p2:Product = Product.init(productId: 200, productName: "ZIP Drive", unitCost: 90.0, quantity: 2)
-var p3:Product = Product.init(productId: 300, productName: "Floppy Disk", unitCost: 50.0, quantity: 3)
-var p4:Product = Product.init(productId: 400, productName: "Monitor", unitCost: 300.0, quantity: 4)
-var p5:Product = Product.init(productId: 500, productName: "iPhone 7 Plus", unitCost: 1200.0, quantity: 2)
+var p1:Product = Product.init(productId:100, productName: "Hard Drive", unitCost: 120.0, quantity: 1)
+var p2:Product = Product.init(productId:200, productName: "ZIP Drive", unitCost: 90.0, quantity: 2)
+var p3:Product = Product.init(productId:300, productName: "Floppy Disk", unitCost: 50.0, quantity: 3)
+var p4:Product = Product.init(productId:400, productName: "Monitor", unitCost: 300.0, quantity: 4)
+var p5:Product = Product.init(productId:500, productName: "iPhone 7 Plus", unitCost: 1200.0, quantity: 2)
 
 
 //CREATING ORDER 1
 var shoppingCart: ShoppingCart?
 shoppingCart = ShoppingCart(cartID: 1, dateAdded: Date(), arrayProducts: [p1,p2,p3])
-
+shoppingCart?.updateQuantity(productID: 300, quantity:10)
 shoppingCart?.display()
+
+
+
+var shoppingCart2: ShoppingCart?
+shoppingCart2 = ShoppingCart(cartID: 1, dateAdded: Date(), arrayProducts: [p2,p3,p4])
+
+shoppingCart2?.display()

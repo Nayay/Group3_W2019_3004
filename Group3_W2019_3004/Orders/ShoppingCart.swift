@@ -11,34 +11,68 @@ class ShoppingCart
 {
    var cartID:Int?
    var arrayProducts:[Product] = [Product]()
- //   var productID:Int?
-//    var quantity:Int?
-    var dateAdded:Date = Date()
-    
-
-    
+   var dateAdded:Date = Date()
+ 
     init?(cartID: Int, dateAdded:Date, arrayProducts:[Product])
     {
         self.cartID = cartID
         self.dateAdded = dateAdded
         self.arrayProducts = arrayProducts
+        
+        for product in self.arrayProducts {
+            product.cartQuantityDefault(cartQuantity: 1)
+        }
+       
     }
     func display() {
-        print("****************************************************************")
+        print("***************************************************")
         print("Cart Id: \(self.cartID!) Date Added: \(self.dateAdded.getForamttedDate())")
         for product in self.arrayProducts {
             product.display()
         }
+        
     }
     
-    func addCartItem(){
-        
+    func addCartItem(productID:Int){
+//        for product in self.arrayProducts {
+//            if(product.getProductID==productID){
+//                print("Product is already added to the cart")
+//
+//            }else{
+//
+//            }
+//
+//        }
+        if arrayProducts.allSatisfy({$0.getProductID != productID}) {
+            print("Invalid Product ID")
+        }
+        else{
+            print("Product Already In Cart")
+        }
     }
-    func updateQuantity(){
+   
+    //update quantity
+    func updateQuantity(productID:Int,quantity:Int){
+        //Add Validations or Product handling later
+      
+        arrayProducts.filter{ $0.getProductID! == productID }.first?.quantity = quantity
+        if arrayProducts.allSatisfy({$0.getProductID != productID}) {
+            print("Invalid Product ID")
+        }
+
         
-        
+//        for product in self.arrayProducts {
+//            if(product.getProductID==productID){
+//                  product.cartQuantityDefault(cartQuantity: quantity)
+//
+//            }
+//            else{
+//
+//            }
+//
+//        }
     }
-    func viewCardDetails(){
+    func viewCartDetails(){
         
     }
     

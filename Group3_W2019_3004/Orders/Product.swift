@@ -11,6 +11,12 @@ import Foundation
 class Product {
     
     var productId:Int?
+    var getProductID:Int?
+    {
+        get{
+            return productId
+        }
+    }
     var productName:String?
     private var unitCost:Float?
     var getProductUnitCost:Float?
@@ -19,7 +25,7 @@ class Product {
             return unitCost
         }
     }
-    private var quantity:Int?
+    var quantity:Int?
     var getProductQuantity:Int?
     {
         get{
@@ -33,8 +39,12 @@ class Product {
         self.quantity = quantity
         
     }
-    func updateQuantity(newQuantity:Int) {
+    //add quantity checks later
+     func updateQuantity(newQuantity:Int) {
         self.quantity = self.quantity! + newQuantity
+    }
+    func cartQuantityDefault(cartQuantity:Int) {
+        self.quantity =  cartQuantity
     }
     func display()
     {

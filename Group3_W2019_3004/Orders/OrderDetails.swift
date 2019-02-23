@@ -22,7 +22,7 @@ class OrderDetails
         
         for product in arrayProducts {
             
-            finalSubTotal = finalSubTotal + (product.getProductUnitCost! * Float(product.getProductQuantity!))
+        finalSubTotal = finalSubTotal + (product.getProductUnitCost! * Float(product.getProductQuantity!))
         }
         return finalSubTotal
     }
