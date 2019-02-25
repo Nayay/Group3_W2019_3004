@@ -5,42 +5,48 @@
 //  Created by Nayay Sharma on 2019-02-22.
 //  Copyright © 2019 Group3. All rights reserved.
 //
-
 import Foundation
 class Orders{
-   
-    var orderID:Int?
-    var dateCreated:String?
-    var dateShipped:String?
-    var customerName:String?
-    var customerID:Int?
-    var status:String?
-    var shippingID:String?
-    init()
-        {
-        self.orderID = 0
-        self.dateCreated =  String()
-        self.dateShipped =  String()
-        self.customerName = String()
-        self.customerID =  0
-        self.status =  String()
-        self.shippingID = String()
+    enum OrderStatus
+    {
+        case Processing
+        case Delivered
     }
-    init(orderID: Int, dateCreated: String, dateShipped: String, customerName: String, customerID: Int, status: String, shippingID: String )
-
+    
+    var orderID:Int!
+    var getOrderID:Int!
+    {
+        get{
+            return orderID
+        }
+        set{
+            orderID = newValue
+        }
+    }
+    
+    var dateCreated:Date = Date()
+    var dateShipped:Date = Date()
+    var customerName:Customer!
+    var customerID:User!
+    var status=OrderStatus.Processing
+    var shippingID:ShippingInfo!
+    
+    init(orderID: Int, dateCreated: Date, dateShipped: Date, customerName: Customer, status: OrderStatus, shippingID: ShippingInfo)
+        
     {
         self.orderID = orderID
         self.dateCreated =  dateCreated
         self.dateShipped =  dateShipped
         self.customerName = customerName
-        self.customerID =  customerID
+        // self.customerID =  customerID
         self.status =  status
         self.shippingID = shippingID
-        
+        //  self.shoppingCart = shoppingCart
     }
     
     func display() {
-print(self.orderID!,self.dateCreated!,self.dateShipped!,self.customerName!,self.customerID!,self.status!,self.shippingID!)
+        print("\nOrder  \n--------------------------------------------------------------")
+        print("Order ID: \(self.orderID!) Date Created: \(self.dateCreated) Date Shipped: \(self.dateShipped) \nCustomer Name: \(String(describing: self.customerName!.getcustomerName!)) Order Status: \(self.status) Shipping Id: \(self.shippingID!.getshippingID!)")
     }
     
     
