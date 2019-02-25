@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+import Foundation
+
 extension String
 {
     //Valid email address
@@ -31,12 +34,12 @@ extension String
     }
 }
 extension Float
+{
+    func currency () -> String
     {
-        func currency () -> String
-        {
-            return "$"+String(self)
-        }
+        return "$"+String(self)
     }
+}
 
 extension Date
 {
@@ -47,4 +50,11 @@ extension Date
         let formattedDate = dateFormatterPrint.string(from: self)
         return formattedDate
     }
+}
+
+enum OMSError : Error
+{
+    case Nil(String)
+    case Invalid(String)
+    
 }
