@@ -6,13 +6,15 @@
 //  Copyright © 2019 Group3. All rights reserved.
 //
 
+
 import Foundation
 
 class User{
     
-    var userID:String?
-    var password:String?
+    var userID:String!
+    var password:String!
     var loginStatus = LoginStatus.InValid
+    static var userIdSet = Set<String>()
     
     //Enum for login status Valid, Invalid User
     enum LoginStatus : Int
@@ -20,27 +22,31 @@ class User{
         case Valid, InValid
     }
     
-    init()
-    {
-        self.userID = String()
-        self.password = String()
-    }
-    init?(userID: String, password: String)
-    {
-        self.userID = userID
-        self.password = password
+    init() {
         
+    }
+    
+    init(userID: String, password: String) throws
+    {
         if (!userID.isEmpty || !password.isEmpty)
         {
-            if(!password.isValidPassword())
+            if(!User.userIdSet.contains(userID))
             {
-                print("Invalid Password format")
-                return nil
+                if(password.isValidPassword())
+                {
+                    self.userID = userID
+                    self.password = password
+                    User.userIdSet.insert(userID)
+                }else{
+                    throw OMSError.Invalid("Invalid Password")
+                }
+            }else
+            {
+                throw OMSError.Invalid("\(userID) already exist")
             }
-            
-        }else{
-            print("User ID or Password cannot be empty ")
-            return nil
+        }else
+        {
+            throw OMSError.Invalid("User Id or Password cannot be empty")
         }
         
     }
@@ -63,8 +69,10 @@ class User{
     
     func display()
     {
-        print(self.userID!,self.password!,self.loginStatus)
+        print("User Details \n--------------------------------------------------------------")
+        print("UserId: \(self.userID!) Password: \(self.password!) Login Status: \(self.loginStatus)")
     }
     
     
 }
+
