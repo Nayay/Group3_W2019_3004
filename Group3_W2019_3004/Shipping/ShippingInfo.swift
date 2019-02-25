@@ -7,34 +7,55 @@
 //
 
 import Foundation
-class  ShoppingInfo{
-    var shippingID:Int?
-    var shippingType:String?
-    var shippingCost:String?
-    var shippingRegionID:String?
-     init()
+class  ShippingInfo{
+    enum shippingTypes
+    {
+        case Standard
+        case Express
+    }
+    var shippingID:Int!
+    var getshippingID:Int!
+    {
+        get{
+            return shippingID
+        }
+        set{
+            shippingID = newValue
+        }
+    }
+    var shippingType=shippingTypes.Standard
+    var shippingCost:Float{
+        var finalOrderTotal:Float = 0.0
+        if(shippingType==shippingTypes.Standard){
+            finalOrderTotal = 2.25
+        }else{
+            finalOrderTotal = 4.55
+        }
+        return finalOrderTotal
+    }
+    //Computed Property : Order Total
+    var shippingRegionID:String!
+    
+    init()
     {
         self.shippingID = 0
-        self.shippingType =  String()
-        self.shippingCost =  String()
         self.shippingRegionID = String()
-     }
+    }
     
-    init(shippingID: Int, shippingType: String, shippingCost: String, shippingRegionID: String)
+    init(shippingID: Int, shippingType: shippingTypes, shippingRegionID: String )
     {
         self.shippingID = shippingID
         self.shippingType = shippingType
-        self.shippingCost =  shippingCost
         self.shippingRegionID = shippingRegionID
-        
     }
     
     func display() {
-        print(self.shippingID!,self.shippingType!,self.shippingCost!,self.shippingRegionID!)
+        print("\nShipping Details \n--------------------------------------------------------------")
+        print("Shipping ID:\(self.shippingID!) Shipping Type:\(self.shippingType) Shipping Cost:\(self.shippingCost) Shipping Region:\(self.shippingRegionID!)")
         
     }
     
-    func updateShippingInfo(){
+    func updateShippingInfo(ShippingInfo:ShippingInfo){
         
         
     }
