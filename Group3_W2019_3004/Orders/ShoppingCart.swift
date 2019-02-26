@@ -5,80 +5,72 @@
 //  Created by Nayay Sharma on 2019-02-22.
 //  Copyright © 2019 Group3. All rights reserved.
 //
-
 import Foundation
 class ShoppingCart
 {
-   var cartID:Int?
-   var arrayProducts:[Product] = [Product]()
-   var dateAdded:Date = Date()
- 
-    init?(cartID: Int, dateAdded:Date, arrayProducts:[Product])
+    var cartID:Int?
+    var quantity: Int?
+    private var productID: Product?
+    var dateAdded:Date = Date()
+    
+    init?(cartID: Int, quantity: Int, productID: Product, dateAdded: Date)
     {
         self.cartID = cartID
         self.dateAdded = dateAdded
-        self.arrayProducts = arrayProducts
-        
-        for product in self.arrayProducts {
-            product.cartQuantityDefault(cartQuantity: 1)
-        }
-       
+        self.productID = productID
+        self.quantity = quantity
     }
-    func display() {
-        print("***************************************************")
-        print("Cart Id: \(self.cartID!) Date Added: \(self.dateAdded.getForamttedDate())")
-        for product in self.arrayProducts {
-            product.display()
+    
+    //Add products to Cart
+    func addCartItem(customer : Customer){
+        let cartItem=ShoppingCart(cartID: self.cartID!, quantity: self.quantity!, productID: self.productID!, dateAdded: self.dateAdded)
+        
+        for product in customer.shoppingCart
+        {
+            
+            if(product.productID!.getProductID!==cartItem?.productID!.productID){
+                
+                //  print("Product already in cart")
+            }else{
+                
+                //   print("Product not in cart")
+            }
         }
+        customer.shoppingCart.append(cartItem!)
+        
         
     }
     
-    func addCartItem(productID:Int){
-//        for product in self.arrayProducts {
-//            if(product.getProductID==productID){
-//                print("Product is already added to the cart")
-//
-//            }else{
-//
-//            }
-//
-//        }
-        if arrayProducts.allSatisfy({$0.getProductID != productID}) {
-            print("Invalid Product ID")
-        }
-        else{
-            print("Product Already In Cart")
-        }
-    }
-   
     //update quantity
-    func updateQuantity(productID:Int,quantity:Int){
-        //Add Validations or Product handling later
-      
-        arrayProducts.filter{ $0.getProductID! == productID }.first?.quantity = quantity
-        if arrayProducts.allSatisfy({$0.getProductID != productID}) {
-            print("Invalid Product ID")
-        }
-
+    func updateQuantity(customer : Customer,productID: Int ,newQuantity:Int)->Bool{
         
-//        for product in self.arrayProducts {
-//            if(product.getProductID==productID){
-//                  product.cartQuantityDefault(cartQuantity: quantity)
-//
-//            }
-//            else{
-//
-//            }
-//
-//        }
+        for product in customer.shoppingCart
+        {
+            if(productID==(product.productID?.getProductID)){
+                if product.cartID == self.cartID
+                {
+                    product.quantity = newQuantity
+                    return true
+                }else{
+                    print("Invalid Card ID")
+                }
+            }
+        }
+        return false
     }
     func viewCartDetails(){
+        
         
     }
     
     func checkout(){
         
     }
-    
+    func display() {
+        print("Products\n---------")
+        print("Cart Id: \(self.cartID!) \nProduct ID: \(String(describing:self.productID!.getProductID!)) Product Name: \(String(describing: self.productID!.ProductName!))  Quantity: \(String(describing: self.quantity!)) \nDate Added: \(self.dateAdded.getForamttedDate())")
+        
+    }
 }
+
 
