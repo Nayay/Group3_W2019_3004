@@ -36,6 +36,14 @@ class Administrator:User
         print("Administrator Name: \(self.adminName!) E-masl: \(self.email!)")
     }
     func updateCatalog(products: [Product], updProduct:Product)->Bool{
+//        func updateCatalog(prodID:Int,prodName:String,price:Float,quantity:Int) -> Bool {
+//            for i in p{
+//                if(i.getproductID == prodID){
+//                    return false
+//                }
+//            }
+//            p.append(Products(productId: prodID, productName: prodName, productQuantity: quantity, productPrice: price))
+//            
         return true
     }
 }

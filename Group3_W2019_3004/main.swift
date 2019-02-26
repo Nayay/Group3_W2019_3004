@@ -7,20 +7,18 @@
 //
 
 import Foundation
+
 //Add User
-
 var user1 =  try User(userID: "1", password: "Password$123")
-
 user1.verify()
 user1.display()
-
+//Adding a duplicate User
 do{
     let user2 = try User(userID: "1", password: "Password$123")
     user2.display()
 }catch let error{
 print(error)
 }
-
 //Add Administrator
 var admin1: Administrator?
 admin1 = try Administrator(userID: "2", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
@@ -32,22 +30,20 @@ var p2:Product = Product.init(productId:200, productName: "ZIP Drive", unitCost:
 var p3:Product = Product.init(productId:300, productName: "Floppy Disk", unitCost: 50.0)
 var p4:Product = Product.init(productId:400, productName: "Monitor", unitCost: 300.0)
 var p5:Product = Product.init(productId:500, productName: "iPhone 7 Plus", unitCost: 1200.0)
-
 //Array of all the products
-//var products = [Product]()
-//products.append(p1)
-//products.append(p2)
-//products.append(p3)
-//products.append(p4)
-//products.append(p4)
+var products = [Product]()
+products.append(p1)
+products.append(p2)
+products.append(p3)
+products.append(p4)
+products.append(p4)
 
-
-//Customer Class
-
+//Array of Customer Class
 var customers = [Customer]()
 var customer1 = Customer()
 var customer2 = Customer()
 var customer3 = Customer()
+//Register a customer
 try customer1.register(customerID: 1001, customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
 try customer2.register(customerID: 1002,customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
     customers.append(customer1)
@@ -57,6 +53,21 @@ for customer in customers
 {
     customer.display()
 }
+//Updating Customer Profile
+do{
+    customer1.customerName = "Nayayjeet Sharma"
+    customer1.address = "699 HBR"
+    try customer1.updateProfile(customers: customers)
+    //Priniting Update customer Profile Information
+    customer1.display()
+    
+}catch let error{
+    print(error)
+}
+//
+
+
+
 // Add products to Shopping Cart
 var cartProduct1 = ShoppingCart(cartID: 1, quantity: 1, productID: p1, dateAdded: Date())
 var cartProduct2 = ShoppingCart(cartID: 1, quantity: 2, productID: p5, dateAdded: Date())
@@ -92,4 +103,4 @@ order1.display()
 var orderDetails=OrderDetails(orderID: 77, cartDetails: customer1.shoppingCart)
 orderDetails.display()
 
-
+//Update Customer Info

@@ -68,12 +68,40 @@ class Customer:User
         super.password = password
         super.verify()
     }
-    func login(){
+    func login()throws{
+        if(super.loginStatus==User.LoginStatus.Valid) {
+            print("Welcome \(String(describing: self.customerName))")
+        }
+        else{
+            throw OMSError.Invalid("Customer Satus Invaid")
+        }
         
     }
-    func updateProfile(){
+        func updateProfile(customers:[Customer]) throws
+        {
+            //Validate customer.userId and customer.password in customers
+            for customer in customers
+            {
+                if customer.userID == self.userID
+                {
+                    customer.customerName = self.customerName
+                    customer.address = self.address
+                    customer.email = self.email
+                    customer.shippingInfo = self.shippingInfo
+                    customer.creaditCardInfo = self.creaditCardInfo
+                    print("---------------Profile Updated---------------")
+                    customer.display()
+                   
+                }
+                else{
+                    throw OMSError.Invalid("User Info not updated")
+                }
+                
+            }
+           
+        }
         
-    }
+  
     
     override func display() {
         
