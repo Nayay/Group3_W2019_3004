@@ -70,7 +70,9 @@ class Customer:User
     }
     func login()throws{
         if(super.loginStatus==User.LoginStatus.Valid) {
-            print("Welcome \(String(describing: self.customerName))")
+            print("\n\n**********************")
+            print("*Welcome \(String(describing: self.customerName!))*")
+            print("**********************")
         }
         else{
             throw OMSError.Invalid("Customer Satus Invaid")

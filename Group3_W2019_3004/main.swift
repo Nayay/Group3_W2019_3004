@@ -12,6 +12,8 @@ import Foundation
 var user1 =  try User(userID: "1", password: "Password$123")
 user1.verify()
 user1.display()
+var user3 =  try User(userID: "3", password: "Password$123")
+user1.display()
 //Adding a duplicate User
 do{
     let user2 = try User(userID: "1", password: "Password$123")
@@ -45,9 +47,16 @@ var customer2 = Customer()
 var customer3 = Customer()
 //Register a customer
 try customer1.register(customerID: 1001, customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
-try customer2.register(customerID: 1002,customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
+try customer2.register(customerID: 1002,customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1003", password: "NayaySharma123$")
     customers.append(customer1)
 //customers.append(cust2)
+//Verifying customer login
+do{
+    try customer1.login()
+}catch let error{
+    print(error)
+    
+}
 //Print all the customers
 for customer in customers
 {
@@ -64,14 +73,10 @@ do{
 }catch let error{
     print(error)
 }
-//
-
-
-
 // Add products to Shopping Cart
-var cartProduct1 = ShoppingCart(cartID: 1, quantity: 1, productID: p1, dateAdded: Date())
-var cartProduct2 = ShoppingCart(cartID: 1, quantity: 2, productID: p5, dateAdded: Date())
-var cartProduct3 = ShoppingCart(cartID: 1, quantity: 3, productID: p3, dateAdded: Date())
+    let cartProduct1 = ShoppingCart(cartID: 1, quantity: 1, productID: p1, dateAdded: Date())
+    let cartProduct2 = ShoppingCart(cartID: 1, quantity: 2, productID: p5, dateAdded: Date())
+    let cartProduct3 = ShoppingCart(cartID: 1, quantity: 3, productID: p3, dateAdded: Date())
 cartProduct1!.addCartItem(customer: customer1)
 cartProduct2!.addCartItem(customer: customer1)
 cartProduct3!.addCartItem(customer: customer1)
