@@ -28,7 +28,7 @@ class Orders{
     var status=OrderStatus.Processing
     var shippingID:ShippingInfo!
     
-    init(orderID: Int, dateCreated: Date, dateShipped: Date,customerID: Customer, customerName: Customer, status: OrderStatus, shippingID: ShippingInfo)
+    init(orderID: Int, dateCreated: Date, dateShipped: Date,customerID: Customer, customerName: Customer, shippingID: ShippingInfo)
         
     {
         self.orderID = orderID
@@ -36,7 +36,6 @@ class Orders{
         self.dateShipped =  dateShipped
         self.customerName = customerName
         self.customerID =  customerID
-        self.status =  status
         self.shippingID = shippingID
         //  self.shoppingCart = shoppingCart
     }
@@ -47,9 +46,7 @@ class Orders{
     }
     
     func placeOrder(){
-        
-        
-        
+       self.status = OrderStatus.Delivered
     }
     
 }

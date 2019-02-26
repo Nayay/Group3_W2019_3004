@@ -7,8 +7,7 @@
 //
 
 import Foundation
-class OrderDetails
-    
+class OrderDetails   
 {
     var orderID:Int!
     var cartDetails:[ShoppingCart]
@@ -43,7 +42,6 @@ class OrderDetails
     }
     
     func calcPrice(){
-        
         print("Final Total: \(self.subTotal)")
     }
     

@@ -24,6 +24,7 @@ print(error)
 //Add Administrator
 var admin1: Administrator?
 admin1 = try Administrator(userID: "2", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
+admin1?.verify()
 admin1?.display()
 
 //CREATING PRODUCT OBJECTS
@@ -39,7 +40,15 @@ products.append(p2)
 products.append(p3)
 products.append(p4)
 products.append(p4)
-
+products.append(p5)
+//Update Product Catalog
+let productUpdate = Product(productId:500, productName: "iPhone 7 Plus", unitCost: 1100.0)
+if (admin1?.updateCatalog(products: products, updateProduct: productUpdate))!
+{
+    print("\n********************************\nProduct Information updated succesfully")
+}else{
+    print("\n********************************\nProduct Information update  Unsuccesfull")
+}
 //Array of Customer Class
 var customers = [Customer]()
 var customer1 = Customer()
@@ -80,7 +89,7 @@ do{
 cartProduct1!.addCartItem(customer: customer1)
 cartProduct2!.addCartItem(customer: customer1)
 cartProduct3!.addCartItem(customer: customer1)
-print("\nCart Details \n--------------------------------------------------------------")
+//View Cart Details
 for products in customer1.shoppingCart
 {
     products.display()
@@ -98,9 +107,12 @@ if(cartStatus){
 //Add Shipping Details
 var shippingDetails = ShippingInfo(shippingID: 10, shippingType: ShippingInfo.shippingTypes.Express, shippingRegionID: "Quebec")
 shippingDetails.display()
-
+//Update Shipping Information
+shippingDetails.updateShippingInfo(shippingId: 11, shippingType: ShippingInfo.shippingTypes.Standard, shippingRegionId:"QUEBEC")
+shippingDetails.display()
 //Add Orders and validate shipping details
-var order1 = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerID: customer1, customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
+var order1 = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerID: customer1, customerName: customer1, shippingID: shippingDetails)
+order1.placeOrder()
 order1.display()
 
 //Order Details

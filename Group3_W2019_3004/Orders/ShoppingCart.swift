@@ -6,7 +6,7 @@
 //  Copyright © 2019 Group3. All rights reserved.
 //
 import Foundation
-class ShoppingCart
+class ShoppingCart:IDisplay
 {
     var cartID:Int?
     var quantity: Int?
@@ -59,12 +59,13 @@ class ShoppingCart
         return false
     }
     func viewCartDetails(){
-        
-        
+
+       display()
+
     }
     
     func checkout(){
-        
+       
     }
     func display() {
         print("Products\n---------")
