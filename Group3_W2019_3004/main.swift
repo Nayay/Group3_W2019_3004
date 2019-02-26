@@ -21,6 +21,7 @@ do{
 }catch let error{
 print(error)
 }
+
 //Add Administrator
 var admin1: Administrator?
 admin1 = try Administrator(userID: "2", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
