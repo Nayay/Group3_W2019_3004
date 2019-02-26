@@ -23,26 +23,21 @@ class OrderDetails
     init(orderID:Int, cartDetails: [ShoppingCart] ){
         self.orderID = orderID
         self.cartDetails=cartDetails
-       
-        for i in cartDetails
-        {
-            print("---",i.quantity!,i.cartID!,i.productID!.getProductID!,i.productID!.ProductName!)
-        }
     }
     
     func display() {
-        print("Order DetailsID: \(self.orderID!) Sub-Total: \(self.subTotal)")
+        print("Order DetailsID: \(self.orderID!) Sub-Total: \(self.subTotal.currency())")
         for i in cartDetails
         {
              print("\nOrder Details \n--------------------------------------------------------------")
-            print("Cart ID: \(i.cartID!) Product ID: \(i.productID!.getProductID!) Product Name: \(i.productID!.ProductName!) Quantity: \(i.quantity!) Unit Cost: \(i.productID!.UnitCost!) ")
+            print("Cart ID: \(i.cartID!) Product ID: \(i.productID!.getProductID!) Product Name: \(i.productID!.ProductName!) Quantity: \(i.quantity!) Unit Cost: \(i.productID!.UnitCost!.currency()) ")
         }
-          print(" \n--------------------------------------------------------------")
-        print("Total Price: \(self.subTotal)")
+        print(" \n--------------------------------------------------------------")
+        print("Total Price: \(calcPrice())")
     }
     
-    func calcPrice(){
-        print("Final Total: \(self.subTotal)")
+    func calcPrice()->String{
+        return self.subTotal.currency()
     }
     
 }

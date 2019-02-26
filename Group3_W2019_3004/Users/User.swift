@@ -68,7 +68,7 @@ class User:IDisplay{
     func display()
     {
         print("User Details \n--------------------------------------------------------------")
-        print("UserId: \(self.userID!) Password: \(self.password!) Login Status: \(self.loginStatus)")
+        print("UserId: \(self.userID!)  Login Status: \(self.loginStatus)")
     }
     
     

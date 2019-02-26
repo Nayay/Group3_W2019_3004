@@ -51,7 +51,7 @@ class  ShippingInfo{
     
     func display() {
         print("\nShipping Details \n--------------------------------------------------------------")
-        print("Shipping ID:\(self.shippingID!) Shipping Type:\(self.shippingType) Shipping Cost:\(self.shippingCost) Shipping Region:\(self.shippingRegionID!)")
+        print("Shipping ID:\(self.shippingID!) Shipping Type:\(self.shippingType) Shipping Cost:\(self.shippingCost.currency()) Shipping Region:\(self.shippingRegionID!)")
         
     }
     

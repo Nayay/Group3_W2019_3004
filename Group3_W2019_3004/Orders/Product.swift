@@ -51,7 +51,7 @@ struct Product{
     func display()
     {
         print("--------------------------------------------------------------------")
-        print("Product Id: ",self.productID!," Product Name: ",self.productName!," Product Price: ",self.unitCost! )
+        print("Product Id: ",self.productID!," Product Name: ",self.productName!," Product Price: ",self.unitCost!.currency() )
         
         
     }

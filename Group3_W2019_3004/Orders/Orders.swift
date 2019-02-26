@@ -24,7 +24,7 @@ class Orders{
     var dateCreated:Date = Date()
     var dateShipped:Date = Date()
     var customerName:Customer!
-     var customerID:Customer!
+    var customerID:Customer!
     var status=OrderStatus.Processing
     var shippingID:ShippingInfo!
     
@@ -37,7 +37,6 @@ class Orders{
         self.customerName = customerName
         self.customerID =  customerID
         self.shippingID = shippingID
-        //  self.shoppingCart = shoppingCart
     }
     
     func display() {
