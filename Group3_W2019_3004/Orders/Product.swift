@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product{
+struct Product:IDisplay{
     
     var productID:Int!
     var getProductID:Int!

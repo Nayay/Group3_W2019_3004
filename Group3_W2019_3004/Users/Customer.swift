@@ -91,12 +91,12 @@ class Customer:User
                     customer.email = self.email
                     customer.shippingInfo = self.shippingInfo
                     customer.creaditCardInfo = self.creaditCardInfo
-                    print("---------------Profile Updated---------------")
+                    print("Customer Profile Updated")
                     customer.display()
                    
                 }
                 else{
-                    throw OMSError.Invalid("User Info not updated")
+                    throw OMSError.Invalid("Customer Profile not updated")
                 }
                 
             }

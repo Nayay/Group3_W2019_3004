@@ -6,7 +6,7 @@
 //  Copyright © 2019 Group3. All rights reserved.
 //
 import Foundation
-class Orders{
+class Orders:IDisplay{
     enum OrderStatus
     {
         case Processing
