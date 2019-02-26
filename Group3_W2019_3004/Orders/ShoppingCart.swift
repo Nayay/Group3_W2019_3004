@@ -65,7 +65,11 @@ class ShoppingCart:IDisplay
     }
     
     func checkout(){
-       
+        if (productID==nil){
+            print("Shopping Cart is empty")
+        }else{
+            print("Checking Out")
+        }
     }
     func display() {
         print("Products\n---------")
