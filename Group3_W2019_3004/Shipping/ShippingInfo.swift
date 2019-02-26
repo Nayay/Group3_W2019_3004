@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class  ShippingInfo{
+class  ShippingInfo:IDisplay{
     enum shippingTypes
     {
         case Standard
