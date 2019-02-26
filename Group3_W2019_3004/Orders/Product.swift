@@ -16,9 +16,6 @@ struct Product{
         get{
             return productID
         }
-        set{
-            productID = newValue
-        }
     }
     var productName:String!
     var ProductName: String!
@@ -27,20 +24,12 @@ struct Product{
         {
             return productName
         }
-        set
-        {
-            productName = newValue
-        }
     }
     private var unitCost:Float!
     var UnitCost:Float!
     {
         get{
             return unitCost
-        }
-        set
-        {
-            unitCost = newValue
         }
     }
     

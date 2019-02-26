@@ -10,7 +10,7 @@ class ShoppingCart
 {
     var cartID:Int?
     var quantity: Int?
-    private var productID: Product?
+     var productID: Product?
     var dateAdded:Date = Date()
     
     init?(cartID: Int, quantity: Int, productID: Product, dateAdded: Date)
@@ -23,7 +23,7 @@ class ShoppingCart
     
     //Add products to Cart
     func addCartItem(customer : Customer){
-        let cartItem=ShoppingCart(cartID: self.cartID!, quantity: self.quantity!, productID: self.productID!, dateAdded: self.dateAdded)
+        let cartItem=ShoppingCart(cartID: self.cartID!, quantity: self.quantity!, productID: self.productID!,dateAdded: self.dateAdded)
         
         for product in customer.shoppingCart
         {
