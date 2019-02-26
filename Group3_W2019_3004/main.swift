@@ -8,51 +8,79 @@
 
 import Foundation
 
+print("Hello, World!")
 
-//anayay
-var user1: User?
-user1 = User(userID: "1", password: "Password$123")
-user1?.verify()
+//Add User
 
-if let u = user1
-{
-    print("User Object Created")
-    u.display()
- }
+var user1 =  try User(userID: "1", password: "Password$123")
+
+user1.verify()
+user1.display()
+//Add Administrator
 var admin1: Administrator?
-admin1 = Administrator(userID: "1", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
-if let a = admin1    
-{
-print("Admin Object Created")
-    a.display()
-    
-}
-var customer1 : Customer?
-customer1=Customer(userID: "1", password: "Password123", customerName: "Nayay", address: "681 hsr", email: "snayay@gmail.com", shoppingInfo: "Active Shopper")
-customer1?.verify()
-if let c = customer1
-{
-    print("Customer Object Created")
-    c.display()
-}
+admin1 = try Administrator(userID: "2", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
+admin1?.display()
 
 //CREATING PRODUCT OBJECTS
-var p1:Product = Product.init(productId:100, productName: "Hard Drive", unitCost: 120.0, quantity: 1)
-var p2:Product = Product.init(productId:200, productName: "ZIP Drive", unitCost: 90.0, quantity: 2)
-var p3:Product = Product.init(productId:300, productName: "Floppy Disk", unitCost: 50.0, quantity: 3)
-var p4:Product = Product.init(productId:400, productName: "Monitor", unitCost: 300.0, quantity: 4)
-var p5:Product = Product.init(productId:500, productName: "iPhone 7 Plus", unitCost: 1200.0, quantity: 2)
+var p1:Product = Product.init(productId:100, productName: "Hard Drive", unitCost: 120.0)
+var p2:Product = Product.init(productId:200, productName: "ZIP Drive", unitCost: 90.0)
+var p3:Product = Product.init(productId:300, productName: "Floppy Disk", unitCost: 50.0)
+var p4:Product = Product.init(productId:400, productName: "Monitor", unitCost: 300.0)
+var p5:Product = Product.init(productId:500, productName: "iPhone 7 Plus", unitCost: 1200.0)
+
+//Array of all the products
+//var products = [Product]()
+//products.append(p1)
+//products.append(p2)
+//products.append(p3)
+//products.append(p4)
+//products.append(p4)
 
 
-//CREATING ORDER 1
-var shoppingCart: ShoppingCart?
-shoppingCart = ShoppingCart(cartID: 1, dateAdded: Date(), arrayProducts: [p1,p2,p3])
-shoppingCart?.updateQuantity(productID: 300, quantity:10)
-shoppingCart?.display()
+//Customer Class
+
+var customers = [Customer]()
+var customer1 = Customer()
+var customer2 = Customer()
+var customer3 = Customer()
+try customer1.register(customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
+try customer2.register(customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
+customers.append(customer1)
+//customers.append(cust2)
+//Print all the customers
+for customer in customers
+{
+    customer.display()
+}
+// Add products to Shopping Cart
+var cartProduct1 = ShoppingCart(cartID: 1, quantity: 1, productID: p1, dateAdded: Date())
+var cartProduct2 = ShoppingCart(cartID: 1, quantity: 2, productID: p5, dateAdded: Date())
+var cartProduct3 = ShoppingCart(cartID: 1, quantity: 3, productID: p3, dateAdded: Date())
+cartProduct1!.addCartItem(customer: customer1)
+cartProduct2!.addCartItem(customer: customer1)
+cartProduct3!.addCartItem(customer: customer1)
+print("\nCart Details \n--------------------------------------------------------------")
+for products in customer1.shoppingCart
+{
+    products.display()
+}
+//Update Product Quantity
+var cartStatus=cartProduct3!.updateQuantity(customer: customer1, productID:100,newQuantity: 20)
+if(cartStatus){
+    print("Product Quantity updated sucessfully")
+}else{
+    print("Product ID not in Cart")
+}
 
 
 
-var shoppingCart2: ShoppingCart?
-shoppingCart2 = ShoppingCart(cartID: 1, dateAdded: Date(), arrayProducts: [p2,p3,p4])
+//Add Shipping Details
+var shippingDetails = ShippingInfo(shippingID: 10, shippingType: ShippingInfo.shippingTypes.Express, shippingRegionID: "Quebec")
+shippingDetails.display()
 
-shoppingCart2?.display()
+//Add Orders and validate shipping details
+var order = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
+order.display()
+
+
+
