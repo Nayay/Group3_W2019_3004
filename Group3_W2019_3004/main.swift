@@ -13,6 +13,14 @@ var user1 =  try User(userID: "1", password: "Password$123")
 
 user1.verify()
 user1.display()
+
+do{
+    let user2 = try User(userID: "1", password: "Password$123")
+    user2.display()
+}catch let error{
+print(error)
+}
+
 //Add Administrator
 var admin1: Administrator?
 admin1 = try Administrator(userID: "2", password: "Password123",  adminName: "Nayay", email: "snayay@gmail.com")
