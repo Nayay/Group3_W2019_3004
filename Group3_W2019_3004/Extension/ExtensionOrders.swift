@@ -40,7 +40,7 @@ extension Float
 {
     func currency () -> String
     {
-        return "$"+String(self)
+        return "$"+String(format:"%.2f",self)
     }
 }
 
