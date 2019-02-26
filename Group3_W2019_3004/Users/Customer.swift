@@ -18,6 +18,13 @@ class Customer:User
             return customerName
         }
     }
+    var customerID:Int!
+    var getcustomerID:Int!
+    {
+        get{
+            return customerID
+        }
+    }
     var address:String!
     var email:String!
     var creaditCardInfo : String!
@@ -38,7 +45,7 @@ class Customer:User
     
     
     
-    func register(customerName: String, address: String,email: String,shippingInfo: String,creaditCardInfo: String, userID: String, password: String)throws {
+    func register(customerID: Int, customerName: String, address: String,email: String,shippingInfo: String,creaditCardInfo: String, userID: String, password: String)throws {
         if customerName.count < 4
         {
             throw OMSError.Invalid(" Customer Name must be greater 10 digits")
@@ -52,6 +59,7 @@ class Customer:User
         {
             throw OMSError.Invalid("Invalid Student Email ID")
         }
+        self.customerID = customerID
         self.customerName = customerName
         self.address = address
         self.email = email
@@ -71,7 +79,7 @@ class Customer:User
         
         super.display()
         print("\nCustomer Details \n--------------------------------------------------------------")
-        print("Customer Name: \(self.customerName!) Address: \(self.address!) \nE-Mail \(self.email!) Shipping Information: \(self.shippingInfo!)")
+        print("Customer ID: \(self.customerID!) Customer Name: \(self.customerName!) Address: \(self.address!) \nE-Mail \(self.email!) Shipping Information: \(self.shippingInfo!)")
         
     }
     

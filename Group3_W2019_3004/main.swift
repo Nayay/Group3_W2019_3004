@@ -43,9 +43,9 @@ var customers = [Customer]()
 var customer1 = Customer()
 var customer2 = Customer()
 var customer3 = Customer()
-try customer1.register(customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
-try customer2.register(customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
-customers.append(customer1)
+try customer1.register(customerID: 1001, customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
+try customer2.register(customerID: 1002,customerName: "Nayay Sharma", address: "681 HSR Layout", email: "snayay@gmail.com", shippingInfo: "681 HSR Layout", creaditCardInfo: "657657657657657", userID: "1001", password: "NayaySharma123$")
+    customers.append(customer1)
 //customers.append(cust2)
 //Print all the customers
 for customer in customers
@@ -79,7 +79,7 @@ var shippingDetails = ShippingInfo(shippingID: 10, shippingType: ShippingInfo.sh
 shippingDetails.display()
 
 //Add Orders and validate shipping details
-var order = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
+var order = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerID: customer1, customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
 order.display()
 
 

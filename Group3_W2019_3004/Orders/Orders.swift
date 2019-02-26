@@ -27,18 +27,18 @@ class Orders{
     var dateCreated:Date = Date()
     var dateShipped:Date = Date()
     var customerName:Customer!
-    var customerID:User!
+     var customerID:Customer!
     var status=OrderStatus.Processing
     var shippingID:ShippingInfo!
     
-    init(orderID: Int, dateCreated: Date, dateShipped: Date, customerName: Customer, status: OrderStatus, shippingID: ShippingInfo)
+    init(orderID: Int, dateCreated: Date, dateShipped: Date,customerID: Customer, customerName: Customer, status: OrderStatus, shippingID: ShippingInfo)
         
     {
         self.orderID = orderID
         self.dateCreated =  dateCreated
         self.dateShipped =  dateShipped
         self.customerName = customerName
-        // self.customerID =  customerID
+        self.customerID =  customerID
         self.status =  status
         self.shippingID = shippingID
         //  self.shoppingCart = shoppingCart
@@ -46,12 +46,8 @@ class Orders{
     
     func display() {
         print("\nOrder  \n--------------------------------------------------------------")
-        print("Order ID: \(self.orderID!) Date Created: \(self.dateCreated) Date Shipped: \(self.dateShipped) \nCustomer Name: \(String(describing: self.customerName!.getcustomerName!)) Order Status: \(self.status) Shipping Id: \(self.shippingID!.getshippingID!)")
+        print("Order ID: \(self.orderID!) Date Created: \(self.dateCreated) Date Shipped: \(self.dateShipped) \nCustomer ID: \(String(describing: self.customerID!.getcustomerID!)) Customer Name: \(String(describing: self.customerName!.getcustomerName!)) Order Status: \(self.status) Shipping Id: \(self.shippingID!.getshippingID!)")
     }
-    
-    
-    
-    
     
     func placeOrder(){
         
