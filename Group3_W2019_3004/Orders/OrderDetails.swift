@@ -10,39 +10,41 @@ import Foundation
 class OrderDetails
     
 {
-    var orderID:Int?
-    
-    var arrayProducts:[Product] = [Product]()
-    
+    var orderID:Int!
+    var cartDetails:[ShoppingCart]
     //Computed Property : Sub Total
-    
-    var subTotal:Float{
-        
-        
-        
-        //        for product in arrayProducts {
-        //
-        //        finalSubTotal = finalSubTotal + (product.getProductUnitCost! * Float(product.getProductQuantity!))
-        //        }
-        return 0.0
+   var subTotal:Float{
+    var finalSubTotal=0.0
+       for product in cartDetails {
+        finalSubTotal = finalSubTotal + Double((Float(product.quantity!) * product.productID!.UnitCost))
+              }
+    return Float(finalSubTotal)
     }
-    
-    init()
-    {
-        self.orderID = 0
-    }
-    
-    init(orderID:Int,arrayProducts:[Product]) {
+   
+    init(orderID:Int, cartDetails: [ShoppingCart] ){
         self.orderID = orderID
-        self.arrayProducts = arrayProducts
+        self.cartDetails=cartDetails
+       
+        for i in cartDetails
+        {
+            print("---",i.quantity!,i.cartID!,i.productID!.getProductID!,i.productID!.ProductName!)
+        }
     }
     
     func display() {
-        print(self.orderID!,self.subTotal)
+        print("Order DetailsID: \(self.orderID!) Sub-Total: \(self.subTotal)")
+        for i in cartDetails
+        {
+             print("\nOrder Details \n--------------------------------------------------------------")
+            print("Cart ID: \(i.cartID!) Product ID: \(i.productID!.getProductID!) Product Name: \(i.productID!.ProductName!) Quantity: \(i.quantity!) Unit Cost: \(i.productID!.UnitCost!) ")
+        }
+          print(" \n--------------------------------------------------------------")
+        print("Total Price: \(self.subTotal)")
     }
+    
     func calcPrice(){
         
-        
+        print("Final Total: \(self.subTotal)")
     }
     
 }

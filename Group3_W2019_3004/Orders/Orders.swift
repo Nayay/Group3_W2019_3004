@@ -19,9 +19,6 @@ class Orders{
         get{
             return orderID
         }
-        set{
-            orderID = newValue
-        }
     }
     
     var dateCreated:Date = Date()

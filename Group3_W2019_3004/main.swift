@@ -7,9 +7,6 @@
 //
 
 import Foundation
-
-print("Hello, World!")
-
 //Add User
 
 var user1 =  try User(userID: "1", password: "Password$123")
@@ -79,8 +76,12 @@ var shippingDetails = ShippingInfo(shippingID: 10, shippingType: ShippingInfo.sh
 shippingDetails.display()
 
 //Add Orders and validate shipping details
-var order = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerID: customer1, customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
-order.display()
+var order1 = Orders(orderID: 11, dateCreated: Date(), dateShipped: Date(), customerID: customer1, customerName: customer1, status: Orders.OrderStatus.Delivered, shippingID: shippingDetails)
+order1.display()
 
+//Order Details
+
+var orderDetails=OrderDetails(orderID: 77, cartDetails: customer1.shoppingCart)
+orderDetails.display()
 
 
