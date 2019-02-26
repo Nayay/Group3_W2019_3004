@@ -9,13 +9,12 @@
 
 import Foundation
 
-class User{
-    
+class User:IDisplay{
+
     var userID:String!
     var password:String!
     var loginStatus = LoginStatus.InValid
     static var userIdSet = Set<String>()
-    
     //Enum for login status Valid, Invalid User
     enum LoginStatus : Int
     {
@@ -42,7 +41,7 @@ class User{
                 }
             }else
             {
-                throw OMSError.Invalid("\(userID) already exist")
+                throw OMSError.Invalid("**User with User ID: \(userID) already exist")
             }
         }else
         {
@@ -66,7 +65,6 @@ class User{
             return true
         }
     }
-    
     func display()
     {
         print("User Details \n--------------------------------------------------------------")

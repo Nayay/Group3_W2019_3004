@@ -11,6 +11,9 @@ import Foundation
 
 import Foundation
 
+protocol IDisplay {
+    func display() 
+}
 extension String
 {
     //Valid email address

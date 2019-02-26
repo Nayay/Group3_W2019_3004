@@ -33,10 +33,24 @@ class Administrator:User
     override func display(){
         
         super.display()
-        print("Administrator Name: \(self.adminName!) E-masl: \(self.email!)")
+        print("Administrator Name: \(self.adminName!) E-mail: \(self.email!)")
     }
-    func updateCatalog(products: [Product], updProduct:Product)->Bool{
-        return true
+    
+    func updateCatalog(products: [Product], updateProduct:Product)->Bool{
+        var updateProduct = updateProduct
+        for product in products
+        {
+            if product.productID == updateProduct.productID
+            {
+                updateProduct.UnitCost = product.UnitCost
+                return true
+            }
+            
+        }
+        print("Product is not found!")
+        return false
     }
+       
+    
 }
 

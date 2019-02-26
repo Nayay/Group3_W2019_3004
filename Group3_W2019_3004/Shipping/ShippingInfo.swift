@@ -55,9 +55,10 @@ class  ShippingInfo{
         
     }
     
-    func updateShippingInfo(ShippingInfo:ShippingInfo){
-        
-        
+    func updateShippingInfo(shippingId: Int, shippingType: shippingTypes, shippingRegionId: String) {
+        self.shippingID = shippingId
+        self.shippingType = shippingType
+        self.shippingRegionID = shippingRegionId
     }
     
 }
