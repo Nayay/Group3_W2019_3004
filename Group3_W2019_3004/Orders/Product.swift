@@ -8,47 +8,53 @@
 
 import Foundation
 
-class Product {
+struct Product{
     
-    var productId:Int?
-    var getProductID:Int?
+    var productID:Int!
+    var getProductID:Int!
     {
         get{
-            return productId
+            return productID
+        }
+        set{
+            productID = newValue
         }
     }
-    var productName:String?
-    private var unitCost:Float?
-    var getProductUnitCost:Float?
+    var productName:String!
+    var ProductName: String!
+    {
+        get
+        {
+            return productName
+        }
+        set
+        {
+            productName = newValue
+        }
+    }
+    private var unitCost:Float!
+    var UnitCost:Float!
     {
         get{
             return unitCost
         }
-    }
-    var quantity:Int?
-    var getProductQuantity:Int?
-    {
-        get{
-            return quantity
+        set
+        {
+            unitCost = newValue
         }
     }
-    init(productId:Int,productName:String,unitCost:Float,quantity:Int) {
-        self.productId = productId
+    
+    init(productId:Int,productName:String,unitCost:Float) {
+        self.productID = productId
         self.productName = productName
         self.unitCost = unitCost
-        self.quantity = quantity
-        
     }
     //add quantity checks later
-     func updateQuantity(newQuantity:Int) {
-        self.quantity = self.quantity! + newQuantity
-    }
-    func cartQuantityDefault(cartQuantity:Int) {
-        self.quantity =  cartQuantity
-    }
     func display()
     {
-        print(self.productId!,self.productName!,self.unitCost!.currency(), self.quantity!, separator:"\t")
+        print("--------------------------------------------------------------------")
+        print("Product Id: ",self.productID!," Product Name: ",self.productName!," Product Price: ",self.unitCost! )
+        
         
     }
     
