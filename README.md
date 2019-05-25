@@ -91,4 +91,4 @@ Total Price: $4950.00
 Program ended with exit code: 0
 
 
-![Image not loaded](/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202019-05-25%20at%2013.56.18.png?raw=true "Optional Title")
+![Image not loaded](/Simulator%20Screen%20Shot%20-%20iPhone%208%20-%202019-05-25%20at%2013.56.18.png?raw=true "Splash Screen")
